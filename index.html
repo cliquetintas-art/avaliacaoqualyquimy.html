@@ -8,8 +8,10 @@
 <style>
 body{
 margin:0;
-font-family: 'Segoe UI', sans-serif;
-background: linear-gradient(135deg,#1f4037,#99f2c8);
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c1c1c);
+background-size:400% 400%;
+animation:gradientBG 10s ease infinite;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -18,24 +20,30 @@ color:white;
 text-align:center;
 }
 
+@keyframes gradientBG{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
 .container{
-background: rgba(0,0,0,0.35);
+background:rgba(0,0,0,0.45);
 padding:40px 30px;
-border-radius:20px;
-backdrop-filter: blur(10px);
-max-width:400px;
+border-radius:25px;
+backdrop-filter:blur(15px);
+max-width:420px;
 width:90%;
-box-shadow:0 15px 40px rgba(0,0,0,0.4);
+box-shadow:0 20px 50px rgba(0,0,0,0.6);
 animation:fadeIn 1.2s ease;
 }
 
 @keyframes fadeIn{
-from{opacity:0; transform:translateY(20px);}
+from{opacity:0; transform:translateY(30px);}
 to{opacity:1; transform:translateY(0);}
 }
 
 .logo{
-width:130px;
+width:140px;
 margin-bottom:20px;
 border-radius:15px;
 }
@@ -48,12 +56,13 @@ margin-bottom:10px;
 p{
 font-size:15px;
 margin-bottom:20px;
+line-height:1.4em;
 }
 
 .estrelas{
-font-size:26px;
-margin-bottom:25px;
-animation: brilho 1.5s infinite alternate;
+font-size:28px;
+margin-bottom:20px;
+animation:brilho 1.5s infinite alternate;
 }
 
 @keyframes brilho{
@@ -62,8 +71,10 @@ to{opacity:1;}
 }
 
 .botao{
-display:inline-block;
-padding:16px 28px;
+display:block;
+margin:10px auto;
+padding:16px;
+width:85%;
 background:#FFD700;
 color:#000;
 font-weight:bold;
@@ -71,24 +82,37 @@ text-decoration:none;
 border-radius:50px;
 font-size:17px;
 transition:0.3s;
+box-shadow:0 0 20px rgba(255,215,0,0.6);
 animation:pulse 1.5s infinite;
 }
 
 .botao:hover{
-background:white;
 transform:scale(1.05);
+background:white;
 }
 
 @keyframes pulse{
 0%{transform:scale(1);}
-50%{transform:scale(1.08);}
+50%{transform:scale(1.06);}
 100%{transform:scale(1);}
 }
 
-footer{
-margin-top:25px;
-font-size:12px;
+.whatsapp{
+background:#25D366;
+color:white;
+box-shadow:0 0 20px rgba(37,211,102,0.6);
+}
+
+.contador{
+margin-top:15px;
+font-size:13px;
 opacity:0.8;
+}
+
+footer{
+margin-top:20px;
+font-size:12px;
+opacity:0.7;
 }
 </style>
 </head>
@@ -99,9 +123,10 @@ opacity:0.8;
 
 <img src="logo-qualy-quimy.jpg" alt="Qualy Quimy" class="logo">
 
-<h1>Sua opinião é muito importante ⭐</h1>
+<h1>Obrigado por escolher a Qualy Quimy 💚</h1>
 
-<p>Se você foi bem atendido pela <strong>Qualy Quimy</strong>, clique abaixo e deixe sua avaliação no Google. Isso nos ajuda a crescer!</p>
+<p>Se você ficou satisfeito com nosso atendimento, deixe sua avaliação no Google.  
+Sua opinião fortalece nosso trabalho!</p>
 
 <div class="estrelas">
 ⭐⭐⭐⭐⭐
@@ -110,14 +135,39 @@ opacity:0.8;
 <a class="botao" 
 href="https://g.page/r/CRECbD178tUDEAI/review"
 target="_blank">
-Avaliar no Google
+⭐ Avaliar no Google
 </a>
 
+<a class="botao whatsapp" 
+href="https://wa.me/5511954950044"
+target="_blank">
+💬 Falar no WhatsApp
+</a>
+
+<div class="contador">
+Redirecionamento automático em <span id="tempo">8</span> segundos...
+</div>
+
 <footer>
-Obrigado pela confiança 💚
+Qualidade • Confiança • Compromisso
 </footer>
 
 </div>
+
+<script>
+let segundos = 8;
+let contador = document.getElementById("tempo");
+
+let intervalo = setInterval(()=>{
+segundos--;
+contador.innerText = segundos;
+
+if(segundos <= 0){
+clearInterval(intervalo);
+window.location.href = "COLOQUE_AQUI_SEU_LINK_DO_GOOGLE";
+}
+},1000);
+</script>
 
 </body>
 </html>
