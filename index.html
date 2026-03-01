@@ -3,58 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Avalie a Qualy Quimy</title>
+<title>Avalie a Qualy Quimy ⭐</title>
 
 <style>
 body{
 margin:0;
-font-family:Arial, sans-serif;
-background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+font-family: 'Segoe UI', sans-serif;
+background: linear-gradient(135deg,#1f4037,#99f2c8);
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 height:100vh;
 color:white;
 text-align:center;
 }
 
 .container{
+background: rgba(0,0,0,0.35);
+padding:40px 30px;
+border-radius:20px;
+backdrop-filter: blur(10px);
 max-width:400px;
-padding:30px;
+width:90%;
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+animation:fadeIn 1.2s ease;
 }
 
-img{
-width:120px;
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+.logo{
+width:130px;
 margin-bottom:20px;
-border-radius:10px;
+border-radius:15px;
 }
 
 h1{
-font-size:22px;
-margin-bottom:15px;
+font-size:24px;
+margin-bottom:10px;
 }
 
 p{
-font-size:16px;
+font-size:15px;
+margin-bottom:20px;
+}
+
+.estrelas{
+font-size:26px;
 margin-bottom:25px;
+animation: brilho 1.5s infinite alternate;
+}
+
+@keyframes brilho{
+from{opacity:0.6;}
+to{opacity:1;}
 }
 
 .botao{
 display:inline-block;
-padding:15px 25px;
+padding:16px 28px;
 background:#FFD700;
 color:#000;
 font-weight:bold;
 text-decoration:none;
 border-radius:50px;
-font-size:16px;
+font-size:17px;
+transition:0.3s;
 animation:pulse 1.5s infinite;
+}
+
+.botao:hover{
+background:white;
+transform:scale(1.05);
 }
 
 @keyframes pulse{
 0%{transform:scale(1);}
-50%{transform:scale(1.05);}
+50%{transform:scale(1.08);}
 100%{transform:scale(1);}
+}
+
+footer{
+margin-top:25px;
+font-size:12px;
+opacity:0.8;
 }
 </style>
 </head>
@@ -63,17 +97,25 @@ animation:pulse 1.5s infinite;
 
 <div class="container">
 
-<img src="logo-qualy-quimy.jpg" alt="Qualy Quimy">
+<img src="logo-qualy-quimy.jpg" alt="Qualy Quimy" class="logo">
 
 <h1>Sua opinião é muito importante ⭐</h1>
 
-<p>Se você foi bem atendido pela Qualy Quimy, clique no botão abaixo e deixe sua avaliação no Google.</p>
+<p>Se você foi bem atendido pela <strong>Qualy Quimy</strong>, clique abaixo e deixe sua avaliação no Google. Isso nos ajuda a crescer!</p>
+
+<div class="estrelas">
+⭐⭐⭐⭐⭐
+</div>
 
 <a class="botao" 
 href="https://g.page/r/CRECbD178tUDEAI/review"
 target="_blank">
 Avaliar no Google
 </a>
+
+<footer>
+Obrigado pela confiança 💚
+</footer>
 
 </div>
 
